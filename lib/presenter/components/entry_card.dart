@@ -22,6 +22,9 @@ class EntryCard extends StatelessWidget {
     return Card(
       child: Dismissible(
         key: ValueKey<int>(entry.id),
+        background: Container(
+          color: Colors.red,
+        ),
         direction: isSaved? DismissDirection.startToEnd : DismissDirection.none,
         onDismissed: (direction){
           daoController.deleteEntry(entry: entry);
